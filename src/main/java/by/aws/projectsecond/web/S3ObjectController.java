@@ -21,11 +21,11 @@ public class S3ObjectController {
 	@Autowired
 	private S3ObjectService service;
 
-	private static final String BUCKET_NAME = "bril-polina/pics";
+	private static final String BUCKET_NAME = "bril-polina";
 
 	@PostMapping(value = "/upload/{filename}")
 	public int uploadFile(@PathVariable String filename) {
-		service.uploadObject(BUCKET_NAME, filename, new File("C://Users/228Lenovo/OneDrive/" + filename));
+		service.uploadObject(BUCKET_NAME, filename, new File("/var/www/" + filename));
 		return HttpStatus.SC_OK;
 	}
 

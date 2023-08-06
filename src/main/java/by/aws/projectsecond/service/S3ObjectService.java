@@ -43,7 +43,7 @@ public class S3ObjectService {
 	public void downloadFile(String bucketName, String key) throws IOException {
 		S3Object s3object = s3client.getObject(bucketName, key);
 		S3ObjectInputStream inputStream = s3object.getObjectContent();
-		FileUtils.copyInputStreamToFile(inputStream, new File("C://Users/228Lenovo/OneDrive/download/"+key));
+		FileUtils.copyInputStreamToFile(inputStream, new File("/var/"+key));
 	}
 
 	@Transactional
